@@ -1,0 +1,52 @@
+[
+
+
+    {
+        "name":"Wireless Headphone",
+        "photo":"http://localhost:5173/src/assets/popular-headphone.jpg",
+        "price":320
+    },
+
+    {
+        "name":"Sony Camera",
+        "photo":"http://localhost:5173/src/assets/popular-camera.webp",
+        "price":400
+    },
+
+    {
+        "name":"Playstation 4",
+        "photo":"http://localhost:5173/src/assets/popular-console.jpg",
+        "price":600
+    }, 
+
+    {
+        "name":"Tablet as a laptop",
+        "photo":"http://localhost:5173/src/assets/HpLaptop.png",
+        "price":1200
+    },
+
+    {
+        "name":"Sony Camera",
+        "photo":"http://localhost:5173/src/assets/popular-camera.webp",
+        "price":400
+    },
+
+    {
+        "name":"Playstation 4",
+        "photo":"http://localhost:5173/src/assets/popular-console.jpg",
+        "price":600
+    },
+
+    {
+        "name":"Tablet as a laptop",
+        "photo":"http://localhost:5173/src/assets/HpLaptop.png",
+        "price":1200
+    },
+
+    {
+        "name":"Wireless Headphone",
+        "photo":"http://localhost:5173/src/assets/popular-headphone.jpg",
+        "price":320
+    }
+
+]

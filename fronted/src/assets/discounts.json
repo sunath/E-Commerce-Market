@@ -1,0 +1,21 @@
+[
+
+
+    {
+        "name":"Cannon Camera",
+        "photo":"http://localhost:5173/src/assets/CannonCamera.png",
+        "discount":89
+    },
+
+    {
+        "name":"Xbox 10",
+        "photo":"http://localhost:5173/src/assets/XBox.png",
+        "discount":110
+    },
+
+    {
+        "name":"Hp Dragonfly Pro",
+        "photo":"http://localhost:5173/src/assets/HpLaptop.png",
+        "discount":990
+    }
+]

@@ -1,0 +1,12 @@
+.sponsers{
+    margin-top: 10rem;
+    width: 85%;
+    display: flex;
+    height: fit-content;
+    justify-content: space-around;
+    background-color: #E2F4FF;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 3rem 0 2rem 0;
+}

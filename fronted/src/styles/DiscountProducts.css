@@ -1,0 +1,214 @@
+
+
+.discount-products{
+    /* margin-top: 10rem; */
+    padding: 2rem;
+    height:35vh;
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    margin-top: 6rem;
+    margin-bottom: 10rem;
+}
+
+.discount-product{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+}
+
+.discount-product-details h2{
+    color: var(--color-blue-dark);
+    font-weight: bold;
+    font-size: 4rem;
+    width: 30rem;
+    line-height: 6rem;
+}
+
+.discount-product-details h2 span{
+    display: block;
+    margin-top: 1rem;
+}
+
+
+.discount-product-actions > * {
+    padding:1.3rem 2.5rem;
+    border-radius: 1rem;
+    border: none;
+    margin: 2rem;
+    margin-left: 0;
+}
+
+.discount-product-actions button:first-child{
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.discount-product-actions button:last-child{
+    background-color: transparent;
+    color: var(--color-blue-dark);
+    border: 1px solid var(--color-blue-dark);
+}
+
+.discount-product-discount{
+    flex: 0 0 30%;
+    position: relative;
+}
+
+.discount-product-discount img{
+    width: 100%;
+    /* height: 30vh; */
+    filter: brightness(1);
+}
+
+.discount-product-discount span{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--color-primary);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    transform: translateY(-5rem);
+}
+
+
+.discount-product{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    transform: translateX(50%);
+}
+
+.discount-products .discount-product:last-child {
+    display: none;
+}
+
+.discount-product-selector{
+    width: 50%;
+    /* height: 100%; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(50%,-3rem);
+    z-index: 10001;
+}
+
+.discount-product-selector{
+    display: flex;
+}
+
+.discount-product-selector > * {
+    margin: 1rem;
+    /* color: var(--color-primary); */
+    color: transparent;
+    border: 1px solid black;
+    /* background-color: var(--color-primary); */
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+
+.discount-product{
+    opacity: 0;
+    transition: all .5s;
+}
+
+.discount-product-show{
+    opacity: 1;
+    z-index: 1000;
+    backface-visibility: hidden;
+    animation: DiscountProductShow 1s forwards;
+}
+
+
+
+@keyframes DiscountProductShow {
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    40%{
+        /* opacity: 0; */
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(50%);
+    }
+}
+
+
+
+
+/* Top sales */
+
+.top-sale{
+    position: relative;
+    width: 90%;
+    height: 50vh;
+    margin: auto;
+    margin-top: 10rem;
+    background-image: url("../assets/SaleLaptop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.top-sale img{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+.top-sale-details{
+    width: 40%;
+    margin-left: auto;
+}
+
+
+.top-sale-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+
+.top-sale-details button{
+    margin: 4rem 0;
+}
+
+.top-sale-details h2{
+    color: #2E8FC5;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.top-sale-details h5{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.top-sale-details button{
+    display: inline-block;
+}

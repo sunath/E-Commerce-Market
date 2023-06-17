@@ -1,0 +1,41 @@
+.trending-products{
+    margin-top: 5rem;
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    height: 5vh;
+}
+
+.trending-product {
+    margin-top: 10rem;
+    margin-left: 5rem;
+    /* width: 30rem; */
+    flex: 0 0 28%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem .5rem;
+    border: 1px solid #A5A5A5;
+    border-radius: 2rem;
+}
+
+.trending-product img {
+    height: 100%;
+}
+
+
+
+.trending-product-details h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    color: var(--color-blue-dark);
+}
+
+.trending-product-details h5{
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--color-blue-dark);
+    
+}

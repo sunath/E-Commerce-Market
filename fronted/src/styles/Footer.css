@@ -1,0 +1,103 @@
+
+.footer{
+    margin-top: 10rem;
+    background-color: var(--color-blue-light);
+    padding-top: 3rem;
+}
+
+.news-letters{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-radius: 1rem;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+}
+
+
+.news-letters > h2{
+    font-size: 2.5rem;
+    color: var(--color-blue-dark);
+}
+
+
+
+.subscribe-input{
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    padding: .3rem .8rem;
+    border-radius: 1rem;
+}
+
+.subscribe-input input{
+    min-width: 25rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+
+.subscribe-input input::placeholder{
+    color: #fff;
+}
+
+.subscribe-input input:active,
+.subscribe-input input:focus{
+    border: none;
+    outline: none;
+}
+
+.subscribe-input button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.get-help{
+    display: flex;
+    align-items: center;
+}
+
+.get-help-numbers{
+    margin-left: 2rem;
+}
+
+.get-help-numbers h2{
+    font-size: 1.5rem;
+    line-height: .8rem;
+}
+
+
+
+
+/* Navigation */
+
+.footer-navigation{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-company-details h2{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    color: var(--color-blue-dark);
+    border-bottom: 1px solid #9D9D9D;
+}
+
+.logoes > svg{
+    margin:  0 2rem;
+}
+
+.logoes svg:first-child{
+    margin-left: 0;
+}

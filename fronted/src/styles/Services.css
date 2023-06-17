@@ -1,0 +1,33 @@
+.services{
+    width: 85%;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    background-color: #E2F4FF;
+    padding: 2rem 2rem;
+    align-items: center;
+    border-radius: .7rem;
+    margin-top: 6rem;
+}
+
+.service{
+    display: flex;
+    align-items: center;
+    flex: 0 0 20%;
+    justify-content: space-around;
+}
+
+
+.service-details h4{
+    color: var(--color-blue-dark);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.service-details h5{
+    color: var(--color-blue-dark);
+    font-weight: 800;
+    font-size: 1rem;
+}
+

@@ -1,0 +1,21 @@
+[
+
+
+    {
+        "name":"Speaker",
+        "items":6,
+        "photo":"http://localhost:5173/src/assets/Speaker.png"
+    },
+
+    {
+        "name":"Dekstop & Laptops",
+        "items":6,
+        "photo":"http://localhost:5173/src/assets/TrendingLaptop.png"
+    },
+
+    {
+        "name":"DSLR Camera",
+        "items":6,
+        "photo":"http://localhost:5173/src/assets/TrendingCamera.png"
+    }
+]
