@@ -1,0 +1,24 @@
+[
+
+    {
+        "name":"Hp Dragonfly Pro",
+        "category":"Laptop",
+        "price":1099,
+        "company":"Hp"
+    },
+
+    {
+        "name":"Cannon Camera",
+        "category":"Camera",
+        "price":99,
+        "company":"Cannon"
+    },
+
+    {
+        "name":"X-Box 10",
+        "category":"X-Box",
+        "price":109,
+        "company":"Microsoft"
+    }
+
+]

@@ -17,17 +17,19 @@ import { FeedBacks } from './components/Feedbacks'
 import { Sponsers } from './components/Sponsers'
 import { Footer } from './components/Footer'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+import {createBrowserRouter,RouterProvider} from "react-router-dom"
+import AdminViewProducts from './components/Admin/AdminProducts.tsx/AdminViewProducts'
 
 
-  useInsertionEffect(() => {
-    writeAllCustomProperites()
-  })
-
-  return (
-    <>
-      <Header></Header>
+const router = createBrowserRouter([
+  {
+    path:"/admin",
+    element:<AdminViewProducts />
+  },
+  {
+    path:"/",
+    element:<>
       <DiscountProducts />
       <TrendingPopularProducts />
       <PopularProducts />
@@ -37,6 +39,23 @@ function App() {
       <FeedBacks />
       <Sponsers />
       <Footer />
+    </>
+  }
+])
+
+function App() {
+  // const [count, setCount] = useState(0)
+
+
+  useInsertionEffect(() => {
+    writeAllCustomProperites()
+  })
+
+  return (
+    <>
+      <Header></Header>
+      <RouterProvider router={router} />
+ 
     </>
   )
 }

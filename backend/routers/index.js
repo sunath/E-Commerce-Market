@@ -1,8 +1,9 @@
 const User = require("./userRouter")
-
+const Products = require("./productRouter")
 
 
 
 module.exports = {
-    user:User
+    user:User,
+    products:Products
 }

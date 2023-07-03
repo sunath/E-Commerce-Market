@@ -1,0 +1,82 @@
+.default-admin-view{
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.admin__products{
+    width: 100%;
+    /* background-color: var(--color-primary); */
+}
+
+
+.admin__products--table-header{
+    width: 100%;
+    
+}
+
+.admin__products--table-header--elements{
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin__products--table-header--elements > * {
+    font-size: 1.5rem;
+    width: var(--tableCellWidth);
+    text-align: center;
+}
+
+
+.admin__products--product{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin__products--product{
+    margin: 2rem 0;
+    /* background-color: #ffae0e; */
+    padding: 1rem .2rem;
+}
+
+.admin__products--product > * {
+    width: var(--tableCellWidth);
+    text-align: center;
+}   
+
+.admin__products--product-img{
+    height: 8rem;
+}
+
+.admin__products--product-img img{
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+/* Buttons */
+
+.admin-product-update-button{
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.admin-product-delete-button{
+    background-color: red;
+    font-weight: 900;
+}
+
+
+.admin-new-product-button{
+    /* width: 10rem; */
+    margin: 2rem 6rem;
+}

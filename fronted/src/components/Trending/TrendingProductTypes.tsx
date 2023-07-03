@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import "../../styles/TrendingProducts.css"
+import { getStaticFile, joinURL } from "../../utils"
 
 
 export const TrendingPopularProducts =  () => {
@@ -10,7 +11,7 @@ export const TrendingPopularProducts =  () => {
 
 
     useEffect(() => {
-        fetch("src/assets/trending.json").then(e => e.json()).then(e => {setProducts(e)})
+        fetch(joinURL("/products/trending-category-item-count?categories=Laptop Camera Speaker")).then(e => e.json()).then(e => {setProducts(e)})
         // setProducts()
     },[])
 
@@ -25,7 +26,7 @@ export const TrendingPopularProducts =  () => {
 const TredingPoupularProduct = (props:{name:string,items:number,photo:string}) => {
     return (
         <div className="trending-product"> 
-        <img src={props.photo} alt="" />
+        <img src={getStaticFile(props.photo)} alt="" />
 
         <div className="trending-product-details">
             <h3>{props.name}</h3>

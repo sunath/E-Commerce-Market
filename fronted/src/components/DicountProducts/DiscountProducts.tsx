@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 
 import "../../styles/DiscountProducts.css"
+import { getProductImg, joinURL } from "../../utils"
 
 export const DiscountProducts = () => {
 
@@ -13,13 +14,14 @@ export const DiscountProducts = () => {
     }
 
     useEffect(() => {
-        fetch("src/assets/discounts.json").then(e => e.json()).then(e => setProducts(e))
+        fetch(joinURL("/products/discount")).then(e => e.json()).then(e => setProducts(e))
+        // fetch("src/assets/discounts.json").then(e => e.json()).then(e => setProducts(e))
     },[])
     return (
 
         <div className="discount-products">
         
-        {products.map((e,i) => <Product photo={e.photo} name={e.name} discount={e.discount} key={e.photo} index={i} activeIndex={activeProdcutId}/>)}
+        {products.map((e,i) => <Product photo={getProductImg(e.imageURL)} name={e.name} discount={e.discountPercent} key={e.imageURL} index={i} activeIndex={activeProdcutId}/>)}
 
 
         <div className="discount-product-selector">

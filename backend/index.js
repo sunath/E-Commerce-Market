@@ -3,8 +3,9 @@ require("dotenv").config()
 
 // Initializing the application
 const express = require("express")
-
-
+const cors = require("cors")
+const fileUpload = require("express-fileupload")
+const path = require("path")
 
 
 // Define the application
@@ -13,6 +14,12 @@ const app = express()
 
 // Add global middlewares
 app.use(express.json())
+app.use(cors({origin:"*",allowedHeaders:"*",credentials:"*"}))
+app.use(fileUpload({
+    limits:"50mb"
+}))
+
+app.use('/static',express.static(path.join(process.cwd(),"assets/static")))
 
 // Initialize the mongo db 
 const mongodb = require("mongoose")

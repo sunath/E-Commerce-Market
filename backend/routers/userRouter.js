@@ -9,8 +9,13 @@ const {sendAuthenticationMail} = require("../mailsender")
 const checkUniquness = require("../utils/uniqueChecker")
 const argon2 = require("argon2")
 const jsonwebtoken = require("jsonwebtoken")
+const {basicUserSecurity} = require("../midddlewares/userSecurity")
 // const { user } = require(".")
 
+
+const createUserToken = (username,e) => jsonwebtoken.sign({username,id:e._id,activated:e.activated},process.env.USER_AUTH_KEY,{
+    expiresIn:(1000*60*60*24*7)+"ms"
+})
 
 
 // Create post form validation
@@ -88,9 +93,7 @@ router.post("/login",loginForm,async (req,res) => {
     UserModel.findOne({username}).then(async e => {
         if(!e)return res.status(403).send({'error':"Your username or password is incorrect"})
         if(await argon2.verify(e.password,password)){
-            const token = jsonwebtoken.sign({username,id:e._id,activated:e.activated},process.env.USER_AUTH_KEY,{
-                expiresIn:"1d"
-            })
+            const token = createUserToken(username,e)
             return res.status(200).send({'token':token,'type':'Bearer'})
         }else{
             return res.status(403).send({'error':"Your username or password is incorrect"})
@@ -105,17 +108,44 @@ router.post("/login",loginForm,async (req,res) => {
 
 
 // Check user is verified or not
-router.get("/verify",async (req,res) => {
-    const auth = req.headers.authorization
-    const token = auth.split("Bearer ")[1]
-
-    const payload = jsonwebtoken.decode(token)
-
-    if(!payload.activated){
+router.get("/verify",basicUserSecurity,async (req,res) => {
+    if(!req.headers.tokenPayload.activated){
         return res.status(400).send({'error':"User does not have verified his account"})
     }
 
-    return res.status(200).send(payload)
+    return res.status(200).send({'activated':true})
+})
+
+
+
+const verifyUserForm = validation.createValidator([
+    {
+        asyncValidators:[],
+        property:"code",
+        validators:[commonValidations.isRequired("Code is required"),(e) => {
+            if(e.length != 4)return {'error':"Invalid code",status:400}
+            return null
+        }]
+    }
+],[])
+// Set user verify
+router.post("/verify",basicUserSecurity,verifyUserForm,async(req,res) => {
+    if(req.headers.tokenPayload.activated)return res.status(400).send({'error':"User is alerady activated"})
+    const {id} = req.headers.tokenPayload
+
+    try{
+        const user = await UserModel.findOne({_id:id})
+        if(user.activation == req.body.code){
+            user.activated = true
+            await user.save()
+            return res.status(202).send({'success':true,'new-token':createUserToken(user.username,user)})
+        }else{
+            return res.status(400).send({'error':"Invalid code"})
+        }
+    }catch(ex){
+        return res.status(500).send({'error':"Internal server error"})
+    }
+    
 })
 
 module.exports = router
