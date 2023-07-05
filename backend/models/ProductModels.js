@@ -34,9 +34,10 @@ const productSchema = mongoose.Schema({
         default:false
     },
     imageURL:{
-        tpye:String
+        type:String,
+    
     },
-    products:{
+    items:{
         type:Number,
         default:1
     },

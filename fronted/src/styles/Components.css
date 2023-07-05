@@ -10,3 +10,7 @@
 .text-blue-dark{
     color: var(--color-blue-dark);
 }
+
+.text-md{
+    font-size: 1.3rem;
+}

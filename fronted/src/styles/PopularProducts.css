@@ -111,6 +111,15 @@
 }
 
 
+.product-discount--early-price{
+    margin-bottom: 0;
+    text-decoration: line-through;
+}
+
+.product-discount--after-price{
+    margin-top: -1rem;
+}
+
 
 /* Reccomands */
 

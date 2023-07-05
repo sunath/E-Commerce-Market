@@ -1,0 +1,33 @@
+.admnin__create__product{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.admnin__create__product--form{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    /* margin-bottom: 1rem; */
+}
+
+
+.admnin__create__product--form-title{
+    margin-bottom: 1rem;
+}
+
+
+.admnin__create__product--form .form-field{
+    margin: 2rem;
+}
+
+
+.admin__create__product--form--img{
+    display: none;
+}
+
+
+.formInvalidErrorAlert{
+    margin-bottom: 2rem;
+}

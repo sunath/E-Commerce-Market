@@ -20,12 +20,28 @@ import { Footer } from './components/Footer'
 
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import AdminViewProducts from './components/Admin/AdminProducts.tsx/AdminViewProducts'
+import AdminProduct from './components/Admin/AdminProducts.tsx/AdminCreateProduct'
+
+import {ChakraProvider} from '@chakra-ui/react'
 
 
 const router = createBrowserRouter([
   {
     path:"/admin",
-    element:<AdminViewProducts />
+    
+    children:[
+      { path:"/admin/create-product",
+        element:<AdminProduct />
+      },
+      {
+        path:"/admin/update-product",
+        element:<AdminProduct />
+      },
+      {
+        path:"",
+        element:<AdminViewProducts />
+      }
+    ]
   },
   {
     path:"/",
@@ -53,8 +69,15 @@ function App() {
 
   return (
     <>
-      <Header></Header>
-      <RouterProvider router={router} />
+
+    <ChakraProvider >
+    
+    <Header></Header>
+    
+    <RouterProvider router={router} />
+
+    </ChakraProvider>
+      
  
     </>
   )

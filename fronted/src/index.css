@@ -9,3 +9,11 @@ html {
     font-size: 62.5%;
     overflow-x: hidden;
 }
+
+.text-align-left{
+    text-align: left;
+}
+
+.margin-small{
+    margin: 1rem;
+}

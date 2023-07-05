@@ -77,7 +77,12 @@ router.post("/",userValidations,async (req,res) => {
     
 })
 
+/*
 
+Route -> Login
+Username and Password are required
+If the username and password are matched then return the bearer token
+*/
 const loginForm = validation.createValidator([
     {property:"username",validators:[commonValidations.isRequired("Username must be provided"),
     commonValidations.isRequired("Your username or password is incorrect")],
@@ -108,6 +113,7 @@ router.post("/login",loginForm,async (req,res) => {
 
 
 // Check user is verified or not
+// Especially made for fronted to check wether user is verified or not
 router.get("/verify",basicUserSecurity,async (req,res) => {
     if(!req.headers.tokenPayload.activated){
         return res.status(400).send({'error':"User does not have verified his account"})
@@ -115,9 +121,6 @@ router.get("/verify",basicUserSecurity,async (req,res) => {
 
     return res.status(200).send({'activated':true})
 })
-
-
-
 const verifyUserForm = validation.createValidator([
     {
         asyncValidators:[],
@@ -128,7 +131,10 @@ const verifyUserForm = validation.createValidator([
         }]
     }
 ],[])
+
+
 // Set user verify
+// Get the pin number and verify the user
 router.post("/verify",basicUserSecurity,verifyUserForm,async(req,res) => {
     if(req.headers.tokenPayload.activated)return res.status(400).send({'error':"User is alerady activated"})
     const {id} = req.headers.tokenPayload

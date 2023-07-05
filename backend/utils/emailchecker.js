@@ -8,7 +8,11 @@
 //     return (false)
 // }
 
-
+/**
+ * 
+ * @param {string} value 
+ * @returns undefined or {error:"Invalid email",status:400}
+ */
 const checkEmail = (value) => {
     if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)){
         return null;

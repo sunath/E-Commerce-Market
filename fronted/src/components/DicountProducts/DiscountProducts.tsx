@@ -21,7 +21,7 @@ export const DiscountProducts = () => {
 
         <div className="discount-products">
         
-        {products.map((e,i) => <Product photo={getProductImg(e.imageURL)} name={e.name} discount={e.discountPercent} key={e.imageURL} index={i} activeIndex={activeProdcutId}/>)}
+        {products.map((e,i) => <Product photo={getProductImg(e.imageURL)} name={e.name} discount={Math.ceil(e.price - (e.price / 100 * e.discountPercent))} key={e.imageURL} index={i} activeIndex={activeProdcutId}/>)}
 
 
         <div className="discount-product-selector">

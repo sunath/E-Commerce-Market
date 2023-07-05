@@ -8,7 +8,6 @@ import { prodctionMode } from "./vite-env.d"
  * @returns 
  */
 export const getBaseURL = () => {
-    console.log(prodctionMode)
     return prodctionMode ? "" : "http://localhost:8000"
 }
 
